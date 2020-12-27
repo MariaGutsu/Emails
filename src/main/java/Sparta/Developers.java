@@ -1,0 +1,9 @@
+package Sparta;
+
+public class Developers extends Position {
+    @Override
+    public void addEmployee(Employee employee) {
+        employee.rate+=5;
+        super.addEmployee(employee);
+    }
+}
