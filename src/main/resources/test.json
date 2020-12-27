@@ -1,0 +1,52 @@
+[
+  {
+    "lastname": "Levchuk",
+    "firstname": "Andrey",
+    "level": "Senior"
+  },
+  {
+    "lastname": "Dvoretsky",
+    "firstname": "Denis",
+    "level": "Senior"
+  },
+  {
+    "lastname": "Murashko",
+    "firstname": "Dmitry",
+    "level": "Middle"
+  },
+  {
+    "lastname": "Rubanov",
+    "firstname": "Alexander",
+    "level": "Senior"
+  },
+  {
+    "lastname": "Semukha",
+    "firstname": "Sergey",
+    "level": "Middle"
+  },
+  {
+    "lastname": "Molochko",
+    "firstname": "Alexandra",
+    "level": "Senior"
+  },
+  {
+    "lastname": "Stephanovich",
+    "firstname": "Daria",
+    "level": "Junior"
+  },
+  {
+    "lastname": "Pobortseva",
+    "firstname": "Anna",
+    "level": "Senior"
+  },
+  {
+    "lastname": "Zelenkova",
+    "firstname": "Lena",
+    "level": "Middle"
+  },
+  {
+    "lastname": "Prokopovich",
+    "firstname": "Julia",
+    "level": "Junior"
+  }
+]
