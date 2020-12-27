@@ -16,28 +16,26 @@ public class Main {
 		String content = new String(Files.readAllBytes(Paths.get("C:\\Users\\MariaGutsu\\IdeaProjects\\SpartaTraining\\src\\main\\resources\\test.json")));
 		List<Employee> employees = new ObjectMapper()
 				.readValue(content, new TypeReference<List<Employee>>() {});
-		System.out.println(employees.get(0).getLastName());
-		System.out.println(employees.get(0).getFirstName());
 
 		Project sparta = new Project("Sparta");
 
 		Developers developers = new Developers();
-		developers.addEmployee(new Employee("Levchuk", "Andrey", "Senior"));
-		developers.addEmployee(new Employee( "Dvoretsky", "Denis", "Middle"));
-		developers.addEmployee(new Employee( "Murashko", "Dmitry", "Middle"));
+		developers.addEmployee(new Employee(employees.get(0).getLastName(), employees.get(0).getFirstName(), employees.get(0).getLevel()));
+		developers.addEmployee(new Employee(employees.get(1).getLastName(), employees.get(1).getFirstName(), employees.get(1).getLevel()));
+		developers.addEmployee(new Employee(employees.get(2).getLastName(), employees.get(2).getFirstName(), employees.get(2).getLevel()));
 
 		Managers managers = new Managers();
-		managers.addEmployee(new Employee("Rubanov", "Alexander", "Senior"));
-		managers.addEmployee(new Employee( "Semukha", "Sergey", "Middle"));
+		managers.addEmployee(new Employee(employees.get(3).getLastName(), employees.get(3).getFirstName(), employees.get(3).getLevel()));
+		managers.addEmployee(new Employee( employees.get(4).getLastName(), employees.get(4).getFirstName(), employees.get(4).getLevel()));
 
 		BA ba = new BA();
-		ba.addEmployee(new Employee("Molochko", "Alexandra", "Senior"));
-		ba.addEmployee(new Employee( "Stephanovich", "Daria", "Junior"));
+		ba.addEmployee(new Employee(employees.get(5).getLastName(), employees.get(5).getFirstName(), employees.get(5).getLevel()));
+		ba.addEmployee(new Employee( employees.get(6).getLastName(), employees.get(6).getFirstName(), employees.get(6).getLevel()));
 
 		QA qa = new QA();
-		qa.addEmployee(new Employee("Pobortseva", "Anna", "Senior"));
-		qa.addEmployee(new Employee( "Zelenkova", "Lena", "Middle"));
-		qa.addEmployee(new Employee( "Prokopovich", "Julia", "Junior"));
+		qa.addEmployee(new Employee(employees.get(7).getLastName(), employees.get(7).getFirstName(), employees.get(7).getLevel()));
+		qa.addEmployee(new Employee( employees.get(8).getLastName(), employees.get(8).getFirstName(), employees.get(8).getLevel()));
+		qa.addEmployee(new Employee( employees.get(9).getLastName(), employees.get(9).getFirstName(), employees.get(9).getLevel()));
 
 		sparta.addPosition(developers);
 		sparta.addPosition(managers);
