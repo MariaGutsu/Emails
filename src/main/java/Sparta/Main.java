@@ -1,8 +1,24 @@
 package Sparta;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.Data;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+@Data
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
+
+		String content = new String(Files.readAllBytes(Paths.get("C:\\Users\\MariaGutsu\\IdeaProjects\\SpartaTraining\\src\\main\\resources\\test.json")));
+		List<Employee> employees = new ObjectMapper()
+				.readValue(content, new TypeReference<List<Employee>>() {});
+		System.out.println(employees.get(0).getLastName());
+		System.out.println(employees.get(0).getFirstName());
+
 		Project sparta = new Project("Sparta");
 
 		Developers developers = new Developers();
