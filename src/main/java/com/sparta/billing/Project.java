@@ -1,4 +1,4 @@
-package Sparta;
+package com.sparta.billing;
 
 import java.util.ArrayList;
 import java.util.List;

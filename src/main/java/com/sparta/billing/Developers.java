@@ -1,4 +1,4 @@
-package Sparta;
+package com.sparta.billing;
 
 public class Developers extends Position {
     @Override

@@ -1,4 +1,4 @@
-package Sparta;
+package com.sparta.billing;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +11,16 @@ public class Position {
 	}
 
 	public void addEmployee(Employee employee) {
+		switch (employee.getLevel()) {
+			case "Middle":
+				employee.rate += 15;
+				break;
+			case "Senior":
+				employee.rate += 20;
+				break;
+			default:
+				employee.rate += 10;
+		}
 		employees.add(employee);
 	}
 

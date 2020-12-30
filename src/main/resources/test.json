@@ -2,51 +2,61 @@
   {
     "lastname": "Levchuk",
     "firstname": "Andrey",
-    "level": "Senior"
+    "level": "Senior",
+    "position": "developer"
   },
   {
     "lastname": "Dvoretsky",
     "firstname": "Denis",
-    "level": "Senior"
+    "level": "Senior",
+    "position": "developer"
   },
   {
     "lastname": "Murashko",
     "firstname": "Dmitry",
-    "level": "Middle"
+    "level": "Middle",
+    "position": "developer"
   },
   {
     "lastname": "Rubanov",
     "firstname": "Alexander",
-    "level": "Senior"
+    "level": "Senior",
+    "position": "manager"
   },
   {
     "lastname": "Semukha",
     "firstname": "Sergey",
-    "level": "Middle"
+    "level": "Middle",
+    "position": "manager"
   },
   {
     "lastname": "Molochko",
     "firstname": "Alexandra",
-    "level": "Senior"
+    "level": "Senior",
+    "position": "ba"
   },
   {
     "lastname": "Stephanovich",
     "firstname": "Daria",
-    "level": "Junior"
+    "level": "Junior",
+    "position": "ba"
   },
   {
     "lastname": "Pobortseva",
     "firstname": "Anna",
-    "level": "Senior"
+    "level": "Senior",
+    "position": "qa"
   },
   {
     "lastname": "Zelenkova",
     "firstname": "Lena",
-    "level": "Middle"
+    "level": "Middle",
+    "position": "qa"
   },
   {
     "lastname": "Prokopovich",
     "firstname": "Julia",
-    "level": "Junior"
+    "level": "Junior",
+    "position": "qa"
   }
 ]
