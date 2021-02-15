@@ -1,44 +1,52 @@
 package com.email.send;
 
 import lombok.Data;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+
+
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.annotations.AfterMethod;
+
 
 import com.codeborne.selenide.Configuration;
-import static com.codeborne.selenide.Selenide.*;
 
 import org.testng.Assert;
 
+import static com.codeborne.selenide.Selenide.open;
+
 @Data
 public class EmailTest {
-    String userName = "mail_auto";
-    String domain = "@inbox.ru";
-    String password = "test2021";
 
-    String subject = "Email to myself";
-    String message = "Message";
+        @Test
+        public void sendEmail() throws IOException {
+            ObjectMapper mapper = new ObjectMapper();
 
-    @Test
-    public void SendEmail(){
+            String content = new String(Files.readAllBytes(Paths.get("src\\main\\resources\\emaildata.json")));
+            List<EmailData> emailData = new ObjectMapper()
+                    .readValue(content, new TypeReference<List<EmailData>>() {
+                    });
 
-        open("https://mail.ru/?from=logout");
-        Elements locator = new Elements();
+            PageObject pageObject = new PageObject();
 
-        locator.userNameField.setValue(userName);
-        locator.domainList.click();
-        locator.selectDomain.click();
-        locator.passwordField.click();
-        locator.loginButton.setValue(password).pressEnter();
+            open("https://mail.ru/?from=logout");
+
+        pageObject.login(pageObject,emailData);
 
         Configuration.timeout = 10000;
 
-        locator.writeMessageButton.click();
-        locator.recipientField.setValue(userName+domain);
-        locator.emailSubjectField.setValue(subject);
-        locator.emailBodyInput.setValue(message);
-        locator.sendMessageButton.click();
+        pageObject.writeMessage(pageObject,emailData);
 
-        Assert.assertTrue(locator.sentNotification.isDisplayed());
+        Assert.assertTrue(pageObject.sentNotification.isDisplayed());
+
+        pageObject.logOut();
 
     }
-
 }
+
